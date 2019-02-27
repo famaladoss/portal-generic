@@ -1,0 +1,29 @@
+{
+  "applicationName": "Generic server instance",
+  "contactEmail": "gianni@ebi.ac.uk",
+  "about": "A base virtual machine instance",
+  "version": "0.6",
+  "cloudProviders": [
+    {
+      "cloudProvider": "AWS",
+      "path": "aws",
+      "inputs":["machine_type"]
+    },
+    {
+     "cloudProvider": "OSTACK",
+     "path": "ostack",
+     "inputs":["machine_type"]
+    },
+    {
+	"cloudProvider": "AZURE",
+	"path": "azure",
+	"inputs": ["machine_type","region","resource_group","os_image_publisher","os_image_offer","os_image_sku","os_image_version"]
+    }
+  ],
+  "inputs": ["disk_image_name"],
+  "deploymentParameters": ["network_name",
+                           "floating_ip_pool",
+                           "subnet_id"],
+
+  "outputs": ["external_ip"]
+}
